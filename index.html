@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="icon" href="https://cdn-icons-png.flaticon.com/512/235/235830.png" type="image/x-icon">
+    <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IMC</title>
+</head>
+
+<body>
+    <div class="content">
+
+        <h1>IMC- Indice de Massa Corporal</h1>
+
+        <p>IMC significa Índice de Massa Corporal. É uma medida utilizada para avaliar se uma pessoa está dentro de
+            faixas
+            consideradas saudáveis de peso em relação à sua altura. O cálculo do IMC é feito dividindo o peso da pessoa
+            (em
+            quilogramas) pelo quadrado da altura (em metros).</p>
+
+        <form action="">
+
+            <label for="altura">Altura:</label>
+            <input type="number" name="altura" id="altura">
+        
+            <label for="peso">Peso (Kg)</label>
+            <input type="number" name="peso" id="peso" maxlength="5">
+            
+
+        </form>
+
+        <button onclick="calcularImc()">Calculadora IMC</button>
+
+        <p>Seu índice de massa corporal é: <span id="resultado"></span></p>
+    </div>
+
+    <script>
+        function calcularImc() {
+            const altura = document.getElementById('altura').value;
+            const peso = document.getElementById('peso').value;
+
+            if (altura > 0 && peso > 0) {
+                const imc = peso / (altura ** 2);
+
+                let mensagem = "";
+
+                if (imc <= 18.5) {
+                    mensagem = "Baixo Peso";
+                } else if (imc <= 24.9) {
+                    mensagem = "Peso Normal";
+                } else if (imc <= 29.9) {
+                    mensagem = "Sobrepeso";
+                } else {
+                    mensagem = "Obesidade";
+                }
+
+                document.getElementById('resultado').textContent = imc.toFixed(2) + " - " + mensagem;
+            } else {
+                alert("Por favor, insira valores válidos para altura e peso.");
+            }
+        }
+    </script>
+
+</body>
+
+</html>

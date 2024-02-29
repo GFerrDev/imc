@@ -1,0 +1,31 @@
+@charset "utf-8";
+
+body{
+    background: url(https://cdn.pixabay.com/photo/2017/06/06/22/46/mediterranean-cuisine-2378758_1280.jpg);
+    background-size: cover;
+}
+
+.content {
+    background: #ffffffc4;
+    width: 80%;
+    height: 80%;
+    margin: 10%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+p{
+    margin-left: 20px;
+}
+
+input{
+    border-radius: 10px;
+}
+
+button{
+    margin: 5px;
+    border-radius: 10px;
+    background: #ffffff00;
+}
